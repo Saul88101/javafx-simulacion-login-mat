@@ -1,0 +1,24 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 14/07/2026, 08:57:04
+    Author     : informatica
+*/
+#estilo-boton-salir {
+    -fx-opacity: 1;
+}
+
+#estilo-boton-salir:hover {
+    -fx-opacity: 0.7;
+    -fx-background-color: red;
+    -fx-cursor: hand;
+}
+
+#estilo-titulo-ventana Label{
+    -fx-lenght: 20;
+    -fx-background-color: gray;
+    font-size: 16px;
+    font-size-adjust: 0.58; 
+}
