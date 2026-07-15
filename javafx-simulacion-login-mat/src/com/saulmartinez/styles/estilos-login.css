@@ -16,9 +16,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-cursor: hand;
 }
 
-#estilo-titulo-ventana Label{
+.estilo-titulo-ventana {
     -fx-lenght: 20;
-    -fx-background-color: gray;
-    font-size: 16px;
-    font-size-adjust: 0.58; 
+    -fx-background-color: burlywood;
+    -fx-font-size: 13px;
+    -fx-background-radius: 5px;
+}
+
+.estilo-bordes-campos-incorrectos{
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+
+}
+
+.estilo-bordes-campos-correctos{
+    -fx-border-color: green;
+    -fx-border-width: 2px;
 }

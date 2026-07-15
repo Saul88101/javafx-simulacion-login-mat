@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.saulmartinez.model;
+package com.saulmartinez.controller;
 
+import com.saulmartinez.model.Rol;
+import com.saulmartinez.model.Usuario;
 import java.util.ArrayList;
 
 /**
@@ -22,18 +24,25 @@ public class AuthSistema {
         listaUsuarios.add(new Usuario("Marco", "2468", "Marco Fuentes", Rol.USER));
 
         listaUsuarios.add(new Usuario("Howards", "789456", "Howard Phillips Lovecraft", Rol.ADMIN));
-
     }
 
     public Usuario login(String username, String password) {
         for (Usuario usuario : listaUsuarios) {
 
-            if (usuario.getUsername().equals(usuario)
-                    && usuario.getPassword().equals(usuario)) {
+            if (usuario.getUsername().equals(username)
+                    && usuario.getPassword().equals(password)) {
                 return usuario;
             }
         }
         return null;
+    }
+
+    public ArrayList<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+
+    public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
     }
 
 }

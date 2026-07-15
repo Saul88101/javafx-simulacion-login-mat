@@ -4,10 +4,13 @@
  */
 package com.saulmartinez.controller;
 
+import com.saulmartinez.view.BienvenidaView;
 import com.saulmartinez.view.LoginView;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javax.swing.JOptionPane;
@@ -32,9 +35,11 @@ public class SceneManager {
         try {
             escenaPrincipal = new Scene(panel, ancho, alto);
             escenarioPrincipal.setScene(escenaPrincipal);
+
             escenarioPrincipal.sizeToScene();
             escenarioPrincipal.show();
-            escenaPrincipal.getStylesheets().add(getClass().getResource("/com/saulmartinez/styles/estilos-botones.css").toExternalForm());
+
+            escenaPrincipal.getStylesheets().add(getClass().getResource("/com/saulmartinez/styles/estilos-login.css").toExternalForm());
         } catch (NullPointerException objetoNulo) {
             JOptionPane.showMessageDialog(null, "Error de objeto nulo : cambiarEscena");
             objetoNulo.printStackTrace();
@@ -59,6 +64,25 @@ public class SceneManager {
             JOptionPane.showMessageDialog(null, "Error padre : ventanaLogin");
             errorPadre.printStackTrace();
         }
+    }
+
+    public void ventanaBienvenida() {
+        try {
+            escenarioSecundario = new Stage();
+            this.escenarioSecundario.initStyle(StageStyle.TRANSPARENT);
+            this.escenarioSecundario.initModality(Modality.APPLICATION_MODAL);
+
+            BienvenidaView bienvenida = new BienvenidaView();
+            
+            escenaPrincipal = new Scene(bienvenida, 200, 300);
+        } catch (NullPointerException objetoNulo) {
+            JOptionPane.showMessageDialog(null, "Error de objeto nulo: Ventana Bienvenida");
+            objetoNulo.printStackTrace(); // imprime todo el camino hacia el error
+        } catch (Exception errorPadre) {
+            JOptionPane.showMessageDialog(null, "Error padre: Ventana Bienvenida");
+            errorPadre.printStackTrace();
+        }
+
     }
 
     // GETTERS Y SETTERS

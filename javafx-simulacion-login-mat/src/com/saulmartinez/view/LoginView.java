@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -51,20 +52,20 @@ public class LoginView extends BorderPane {
     private LoginView() {
         this.setPadding(new Insets(20));
         this.setBorder(new Border(new BorderStroke(
-                Paint.valueOf("#4927F5"),
-                BorderStrokeStyle.SOLID, // Cambiado a SOLID para que se pueda ver
+                Paint.valueOf("#121212"),
+                BorderStrokeStyle.SOLID,
                 new CornerRadii(25),
-                new BorderWidths(50))));
+                new BorderWidths(10))));
 
         this.setBackground(new Background(
                 new BackgroundFill(
-                        Paint.valueOf("#27F549"),
+                        Paint.valueOf("#3EB489"),
                         new CornerRadii(25),
                         Insets.EMPTY
                 )
         ));
 
-        this.getStyleClass().add("estilos-botones");
+        this.getStyleClass().add("estilos-login");
 
         barraDeVentana = new HBox(20);
 
@@ -84,14 +85,22 @@ public class LoginView extends BorderPane {
         btnCerrarVentana.setId("estilo-boton-salir");
 
         lblTituloVentana = new Label("JavaFX - MAT - Simulador Login");
+        lblTituloVentana.getStyleClass().add("estilo-titulo-ventana");
+        Image gif = new Image(getClass().getResource(
+                "/com/saulmartinez/resources/mario-dancing.gif")
+                .toExternalForm(), 32, 32, true, true);
+        
+        ImageView imageView = new ImageView(gif);
+        
+        lblTituloVentana.setGraphic(imageView);
 
         btnIniciarSesion = new Button("Iniciar Sesion");
 
-        imgLogologin.setFitHeight(50);
-        imgLogologin.setFitWidth(50);
+        imgLogologin.setFitHeight(100);
+        imgLogologin.setFitWidth(100);
         imgLogologin.setCache(true);
         imgLogologin.setPreserveRatio(false);
-        
+
         barraDeVentana.getChildren().addAll(btnCerrarVentana, lblTituloVentana);
 
         formulario.add(lblNombreUsuario, 0, 0);
